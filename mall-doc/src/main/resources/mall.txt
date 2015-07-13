@@ -1,0 +1,28 @@
+整个项目采用maven+hibernate+spring+spring mvc架构
+版本控制：
+git:https://github.com/wenrisheng/mall.git
+
+各架构版本：
+jdk                       1.8
+maven                     3.3.3
+Eclipse Java EE IDE for Web Developers 4.2.2
+hibetrnate               4.3.6.Final
+spring                   4.0.6.RELEASE
+ 
+-mall                       pom                 maven项目
+-mall-dependies             pom                 依赖配置
+－mall-util                 module              工具项目
+－mall-doc                  module              项目说明文档
+
+-mall-dependies             pom                 依赖配置
+--mall-all                  pom                 父项目
+---mall-resource            pom                 资源项目
+---mall-login               pom                 登陆模块
+---mall-foreground          pom                 前台模块
+---mall-background          pom                 后台模块
+
+
+－**-dao         dao层
+－**-service     service层
+－**-controller  controller层
+－**-web         web层
