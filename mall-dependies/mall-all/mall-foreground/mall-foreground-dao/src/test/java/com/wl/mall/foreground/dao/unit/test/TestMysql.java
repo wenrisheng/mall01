@@ -10,12 +10,8 @@ import java.sql.Statement;
 
 public class TestMysql {
 	
-    public static final String url = "jdbc:mysql://127.0.0.1/student";  
-    public static final String name = "com.mysql.jdbc.Driver";  
-    public static final String user = "root";  
-    public static final String password = "root";  
     
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 Connection conn = null;
 	        String sql;
@@ -23,9 +19,9 @@ public class TestMysql {
 	        // 避免中文乱码要指定useUnicode和characterEncoding
 	        // 执行数据库操作之前要在数据库管理系统上创建一个数据库，名字自己定，
 	        // 下面语句之前就要先创建javademo数据库
-	        String url = "jdbc:mysql://127.0.0.1:3306/va66?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8";
-	        String user = "";
-	        String password = "";
+	        String url = "jdbc:mysql://127.0.0.1:3306/mall?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8";
+	        String user = "adminhukuLqY";
+	        String password = "lelhLQSWSrhT";
 	      
 	        try {
 	            // 之所以要使用下面这条语句，是因为要使用MySQL的驱动，所以我们要把它驱动起来，
@@ -41,6 +37,7 @@ public class TestMysql {
 	           // conn = DriverManager.getConnection(url);
 	            conn = DriverManager.getConnection(url, user, password);
 	            // Statement里面带有很多方法，比如executeUpdate可以实现插入，更新和删除等
+	            System.out.println("连接：" + conn);
 	            Statement stmt = conn.createStatement();
 	            sql = "create table student(NO char(20),name varchar(20),primary key(NO))";
 	            int result = stmt.executeUpdate(sql);// executeUpdate语句会返回一个受影响的行数，如果返回-1就没有成功
@@ -64,7 +61,12 @@ public class TestMysql {
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        } finally {
-	            conn.close();
+	            try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	        }
 	 
 	}

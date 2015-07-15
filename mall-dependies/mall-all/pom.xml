@@ -9,9 +9,11 @@
   <packaging>pom</packaging>
   
   <modules>
+   	
     <module>mall-resource</module>
   	<module>mall-login</module>
   	<module>mall-foreground</module>
   	<module>mall-background</module>
+  	<module>mall-util</module>
   </modules>
 </project>

@@ -7,4 +7,5 @@
   </parent>
   <artifactId>mall-background-web</artifactId>
   <packaging>war</packaging>
+  
 </project>
