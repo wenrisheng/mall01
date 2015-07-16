@@ -9,19 +9,22 @@ Eclipse Java EE IDE for Web Developers 4.2.2
 hibetrnate               4.3.6.Final
 spring                   4.0.6.RELEASE
  
--mall                       pom                 maven项目
+mall                        pom                 maven项目
 -mall-dependies             pom                 依赖配置
 －mall-doc                  module              项目说明文档
 
--mall-dependies             pom                 依赖配置
---mall-all                  pom                 父项目
----mall-util                module              工具模块
----mall-resource            pom                 资源模块
----mall-login               pom                 登陆模块
----mall-foreground          pom                 前台模块
----mall-background          pom                 后台模块
+mall-dependies             pom                 依赖配置
+-mall-all                  pom                 父项目
 
+mall-all                   pom                  父项目
+-mall-module-util          jar                  工具模块
+-mall-module-resource      war                  资源模块
+-mall-module-user          jar                  用户模块
+-mall-module-manager       jar                  管理员模块
+-mall-module-foreground    war                  前台模块
+-mall-module-background    war                  后台模块
 
+-**-model                                       modul层
 －**-dao                                        dao层
 －**-service                                    service层
 －**-controller                                 controller层

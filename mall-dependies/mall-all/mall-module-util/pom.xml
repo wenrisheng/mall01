@@ -5,6 +5,5 @@
     <artifactId>mall-all</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>mall-foreground</artifactId>
-  <packaging>war</packaging>
+  <artifactId>mall-module-util</artifactId>
 </project>
