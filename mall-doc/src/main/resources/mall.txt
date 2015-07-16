@@ -29,12 +29,15 @@ mall-all                   pom                  父项目
 
 
                                                    mall
+                                                    ｜
                 ____________________________________________________________________                                   
                 |                                   |                               |
             mall-doc                            mall-dependies  <-------------mall-module-util
+                                                    ｜
                                       -------------------------------------------
                                       |                                         |
                                   mall-all  <------------------------ mall-module-common
+                                      ｜
           -----------------------------------------------------                         
           |               |                |                  |
  mall-background mall-foreground mall-module-resources mall-module-user                                 
