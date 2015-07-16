@@ -1,4 +1,5 @@
 <html>
 <body>
-resource-web
+mall-foreground-index
 </html>
+<% request.getRequestDispatcher("/index.html").forward(request, response); %>

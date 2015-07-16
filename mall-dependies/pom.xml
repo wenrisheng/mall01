@@ -10,9 +10,13 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>mall-all</module>
+		<module>mall-module-common</module>
 	</modules>
 
 	<!-- ************************依赖配置 ******************************** -->
+	<!-- 依赖管理 -->
+	
+	<!-- 依赖 -->
 	<dependencies>
 		<!-- 单元测试 -->
 		<dependency>
@@ -317,6 +321,11 @@
 			<groupId>aopalliance</groupId>
 			<artifactId>aopalliance</artifactId>
 			<version>${aopalliance.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.wl.mall</groupId>
+			<artifactId>mall-module-util</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

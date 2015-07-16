@@ -11,18 +11,36 @@ spring                   4.0.6.RELEASE
  
 mall                        pom                 maven项目
 -mall-dependies             pom                 依赖配置
-－mall-doc                  module              项目说明文档
+-mall-doc                   module              项目说明文档
+-mall-util                  module              工具模块          
 
-mall-dependies             pom                 依赖配置
--mall-all                  pom                 父项目
+mall-dependies              pom                 依赖配置
+-mall-all                   pom                 父项目
+-mall-module-common         jar                 项目共有依赖 
 
 mall-all                   pom                  父项目
--mall-module-util          jar                  工具模块
 -mall-module-resource      war                  资源模块
 -mall-module-user          jar                  用户模块
 -mall-module-manager       jar                  管理员模块
 -mall-module-foreground    war                  前台模块
 -mall-module-background    war                  后台模块
+
+
+
+
+                                                   mall
+                ____________________________________________________________________                                   
+                |                                   |                               |
+            mall-doc                            mall-dependies  <-------------mall-module-util
+                                      -------------------------------------------
+                                      |                                         |
+                                  mall-all  <------------------------ mall-module-common
+          -----------------------------------------------------                         
+          |               |                |                  |
+ mall-background mall-foreground mall-module-resources mall-module-user                                 
+                               
+
+
 
 -**-model                                       modul层
 －**-dao                                        dao层
@@ -52,3 +70,6 @@ ProjectName                                    模块名
 -----uploadfile                                 存放上传文件（上传文件暂时放在这里，后期可能要改为配置文件定义存放路径）
 ----index.jsp
 -target
+
+
+

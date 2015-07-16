@@ -7,6 +7,7 @@
   <modules>
   	<module>mall-dependies</module>
   	<module>mall-doc</module>
+  	<module>mall-module-util</module>
   </modules>
   <!-- 属性配置 -->
 	<properties>
@@ -45,4 +46,35 @@
 		<org.codehaus.jackson.version>1.9.6</org.codehaus.jackson.version>
 		<org.apache.maven.plugins.maven-war-plugin.version>2.3</org.apache.maven.plugins.maven-war-plugin.version>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			
+			<dependency>
+				<groupId>com.wl.mall</groupId>
+				<artifactId>mall-module-resources</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>com.wl.mall</groupId>
+				<artifactId>mall-module-user</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wl.mall</groupId>
+				<artifactId>mall-module-manager</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wl.mall</groupId>
+				<artifactId>mall-module-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wl.mall</groupId>
+				<artifactId>mall-module-util</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.wl.mall</groupId>
-    <artifactId>mall-all</artifactId>
+    <artifactId>mall-dependies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>mall-module-util</artifactId>
+  <artifactId>mall-module-common</artifactId>
 </project>

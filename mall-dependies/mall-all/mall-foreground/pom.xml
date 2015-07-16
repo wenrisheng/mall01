@@ -1,10 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.wl.mall</groupId>
-    <artifactId>mall-all</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>mall-foreground</artifactId>
-  <packaging>war</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.wl.mall</groupId>
+		<artifactId>mall-all</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>mall-foreground</artifactId>
+	<packaging>war</packaging>
+
+	<!-- 配置依赖 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.wl.mall</groupId>
+			<artifactId>mall-module-user</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.wl.mall</groupId>
+			<artifactId>mall-module-resources</artifactId>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<overlays>
+						<overlay>
+							<groupId>com.wl.mall</groupId>
+							<artifactId>mall-module-resources</artifactId>
+							<!-- <classifier>war</classifier>
+							<excludes>
+								<exclude>*/web.xml,WEB-INF/lib/*</exclude>
+							</excludes> -->
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
