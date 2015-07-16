@@ -32,16 +32,16 @@ mall-all                   pom                  父项目
                                                     ｜
                 ____________________________________________________________________                                   
                 |                                   |                               |
-            mall-doc                            mall-dependies  <-------------mall-module-util
-                                                    ｜
+            mall-doc                           mall-dependies  <-------------mall-module-util
+            项目文档模块                          依赖配置模块｜                             工具类模块
                                       -------------------------------------------
                                       |                                         |
                                   mall-all  <------------------------ mall-module-common
-                                      ｜
-          -----------------------------------------------------                         
-          |               |                |                  |
- mall-background mall-foreground mall-module-resources mall-module-user                                 
-                               
+                        项目依赖配置模块 ｜                                    项目公共模块
+          ------------------------------------------------------------------------                         
+          |               |                |                  |                   |
+ mall-background mall-foreground mall-module-resources mall-module-user mall-module-menu                                 
+      后台模块             前台模块        公共资源模块            用户模块           菜单模块                     
 
 
 
@@ -63,12 +63,12 @@ ProjectName                                    模块名
 --main
 ---webapp
 ----common                                      存放模块公共页面，如头部、尾部页面
-----logs                                        存放模块日志，保持log4j的日志
 ----resources                                   模块资源文件夹
 -----css                                        存放css，根据情况再建立子文件夹
 -----images                                     存放图片，据情况再建立子文件夹
 -----js                                         存放javascript文件，据情况再建立子文件夹
 ----WEB-INF
+-----logs                                       存放模块日志，保持log4j的日志
 -----jsp                                        存放jsp页面，据情况再建立子文件夹
 -----uploadfile                                 存放上传文件（上传文件暂时放在这里，后期可能要改为配置文件定义存放路径）
 ----index.jsp

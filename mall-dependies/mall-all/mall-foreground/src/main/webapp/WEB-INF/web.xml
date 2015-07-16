@@ -22,7 +22,7 @@
 		所有applicationContext-web.xml没有存在的必要，所以此时不是父子模式， 数据源、服务层、DAO层、事务的Bean可以配置在applicationContext-web.xml但架构不需要 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value> classpath*:applicationContext-foreground.xml</param-value>
+		<param-value> classpath*:applicationContext_foreground.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

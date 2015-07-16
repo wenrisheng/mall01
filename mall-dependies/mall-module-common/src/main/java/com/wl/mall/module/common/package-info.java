@@ -5,4 +5,4 @@
  * @author wrs
  *
  */
-package com.wl.mall.module.user.test;
+package com.wl.mall.module.common;

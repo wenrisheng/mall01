@@ -5,9 +5,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
+   	<module>mall-module-util</module>
   	<module>mall-dependies</module>
   	<module>mall-doc</module>
-  	<module>mall-module-util</module>
   </modules>
   <!-- 属性配置 -->
 	<properties>
