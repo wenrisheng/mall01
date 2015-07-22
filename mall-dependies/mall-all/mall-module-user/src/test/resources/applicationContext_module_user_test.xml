@@ -46,7 +46,17 @@
 		<property name="packagesToScan" value="com.wl.mall.model" />
 	</bean>
 	
- <bean id="transactionManager"
+	<bean id="transactionManager"
+
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+
+        p:sessionFactory-ref="sessionFactory" />
+ 
+	 <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+	 
+	 
+	
+ <!-- <bean id="transactionManager"
 
         class="org.springframework.orm.hibernate4.HibernateTransactionManager"
 
@@ -72,5 +82,5 @@
             expression="execution(* com.wl.mall.service.impl.*.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
     </aop:config>
-<!-- 	<tx:annotation-driven/> -->
+ -->
 </beans> 

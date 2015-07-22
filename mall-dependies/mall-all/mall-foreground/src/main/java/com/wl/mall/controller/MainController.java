@@ -1,4 +1,4 @@
-package com.wl.mall.foreground.controller;
+package com.wl.mall.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
