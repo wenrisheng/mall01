@@ -18,17 +18,17 @@
                 ">
 
 	<import resource="classpath*:applicationContext-*.xml" />
-
+	<context:component-scan base-package="com.wl.mall"></context:component-scan>
+	
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
-		p:dataSource-ref="dataSource" p:configLocation="classpath:hibernate.cfg.xml">
+		p:dataSource-ref="dataSource">
 		<!-- <property name="mappingResources"> <list> <value>com/wrs/model/Customer.hbm.xml</value> 
 			<value>com/wrs/model/Slide.hbm.xml</value> <value>com/wrs/model/SecondLevelInfo.hbm.xml</value> 
 			<value>com/wrs/model/InfoDetail.hbm.xml</value> <value>com/wrs/model/IndexOneCategory.hbm.xml</value> 
 			<value>com/wrs/model/IndexTwoCategory.hbm.xml</value> <value>com/wrs/model/FirstLevelInfo.hbm.xml</value> 
 			<value>com/wrs/model/Manager.hbm.xml</value> </list> </property> -->
 		<property name="hibernateProperties">
-
 			<props>
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
@@ -41,9 +41,36 @@
 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
 				<prop key="current_session_context_class">thread</prop>
 			</props>
+
 		</property>
-
+		<property name="packagesToScan" value="com.wl.mall.model" />
 	</bean>
+	
+ <bean id="transactionManager"
 
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager"
 
+        p:sessionFactory-ref="sessionFactory" />
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="select*" read-only="true" propagation="REQUIRED" />
+            <tx:method name="get*" read-only="true" propagation="REQUIRED" />
+            <tx:method name="load*" read-only="true" propagation="REQUIRED" />
+            <tx:method name="find*" read-only="true" propagation="REQUIRED" />
+            <tx:method name="query*" read-only="true" propagation="REQUIRED" />
+            <tx:method name="read*" read-only="true" propagation="REQUIRED" />
+            <tx:method name="sync*" propagation="REQUIRED" />
+            <tx:method name="insert*" propagation="REQUIRED" />
+             <tx:method name="save*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="edit*" propagation="REQUIRED" />
+            <tx:method name="*" propagation="REQUIRED" rollback-for="Exception" />
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="pointcut"
+            expression="execution(* com.wl.mall.service.impl.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
+    </aop:config>
+<!-- 	<tx:annotation-driven/> -->
 </beans> 

@@ -1,6 +1,6 @@
-package com.wl.mall.module.user.model;
+package com.wl.mall.model;
 
-// Generated 2015-7-16 11:42:27 by Hibernate Tools 4.3.1
+// Generated 2015-7-22 22:34:48 by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +39,7 @@ public class User implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "account", nullable = false, length = 32)
+	@Column(name = "account", length = 30)
 	public String getAccount() {
 		return this.account;
 	}
@@ -48,7 +48,7 @@ public class User implements java.io.Serializable {
 		this.account = account;
 	}
 
-	@Column(name = "password", nullable = false, length = 30)
+	@Column(name = "password", length = 30)
 	public String getPassword() {
 		return this.password;
 	}
