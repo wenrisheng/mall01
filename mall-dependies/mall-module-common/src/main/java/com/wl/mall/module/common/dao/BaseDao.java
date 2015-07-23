@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public interface BaseDao<T> {
-
+	
 	public abstract Serializable save(Object o);
 
 	public abstract void delete(Object o);
@@ -30,16 +30,16 @@ public interface BaseDao<T> {
 
 	public abstract T get(String hql, List<?> param);
 
-	public abstract Long count(String hql);
-
-	public abstract Long count(String hql, Object[] param);
-
-	public abstract Long count(String hql, List<?> param);
-
-	public abstract Integer executeHql(String hql);
-
-	public abstract Integer executeHql(String hql, Object[] param);
-
-	public abstract Integer executeHql(String hql, List<?> param);
+//	public abstract Long count(String hql);
+//
+//	public abstract Long count(String hql, Object[] param);
+//
+//	public abstract Long count(String hql, List<?> param);
+//
+//	public abstract Integer executeHql(String hql);
+//
+//	public abstract Integer executeHql(String hql, Object[] param);
+//
+//	public abstract Integer executeHql(String hql, List<?> param);
 
 }

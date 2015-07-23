@@ -8,11 +8,13 @@ import javax.annotation.Resource;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.wl.mall.module.common.dao.BaseDao;
+import com.wl.mall.module.common.dao.GenericsUtils;
 import com.wl.mall.module.common.service.BaseService;
 
 public class BaseServiceImpl<T> implements BaseService<T> {
 	
 	@Resource
+	protected
 	BaseDao<T> baseDao;
 	
 	@Override
@@ -26,6 +28,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	@Transactional
 	public void delete(Object o) {
 		// TODO Auto-generated method stub
+	
 		baseDao.delete(o);
 	}
 
@@ -98,48 +101,6 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	public T get(String hql, List<?> param) {
 		// TODO Auto-generated method stub
 		return baseDao.get(hql, param);
-	}
-
-	@Override
-	@Transactional(readOnly = true)
-	public Long count(String hql) {
-		// TODO Auto-generated method stub
-		return baseDao.count(hql);
-	}
-
-	@Override
-	@Transactional(readOnly = true)
-	public Long count(String hql, Object[] param) {
-		// TODO Auto-generated method stub
-		return baseDao.count(hql, param);
-	}
-
-	@Override
-	@Transactional(readOnly = true)
-	public Long count(String hql, List<?> param) {
-		// TODO Auto-generated method stub
-		return baseDao.count(hql, param);
-	}
-
-	@Override
-	@Transactional
-	public Integer executeHql(String hql) {
-		// TODO Auto-generated method stub
-		return baseDao.executeHql(hql);
-	}
-
-	@Override
-	@Transactional
-	public Integer executeHql(String hql, Object[] param) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	@Transactional
-	public Integer executeHql(String hql, List<?> param) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

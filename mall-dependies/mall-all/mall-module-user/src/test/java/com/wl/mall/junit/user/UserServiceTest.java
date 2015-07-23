@@ -16,10 +16,14 @@ public class UserServiceTest {
 
 	@Resource
 	private UserService userService;
+//	@Test
+//	public void testSaveUser() {
+//		User user = new User("wrs", "123455", "1353842");
+//		userService.registerUser("wenrisheng", "333333333");
+//	}
+	
 	@Test
-	public void testSaveUser() {
-		User user = new User("wrs", "123455");
-		userService.saveUser(user);
+	public void testDeleteUser() {
+		userService.deleteUser(1l);;
 	}
-
 }

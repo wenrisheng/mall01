@@ -29,15 +29,4 @@ public interface BaseService<T> {
 
 	public abstract T get(String hql, List<?> param);
 
-	public abstract Long count(String hql);
-
-	public abstract Long count(String hql, Object[] param);
-
-	public abstract Long count(String hql, List<?> param);
-
-	public abstract Integer executeHql(String hql);
-
-	public abstract Integer executeHql(String hql, Object[] param);
-
-	public abstract Integer executeHql(String hql, List<?> param);
 }
