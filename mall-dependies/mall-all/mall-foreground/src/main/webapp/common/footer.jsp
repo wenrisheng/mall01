@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-真正的首页
+
 </body>
 </html>
