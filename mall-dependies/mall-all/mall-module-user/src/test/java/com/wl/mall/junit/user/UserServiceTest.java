@@ -10,17 +10,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.wl.mall.model.User;
 import com.wl.mall.service.UserService;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(locations={"classpath:applicationContext_module_user_test.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath:applicationContext_module_user_test.xml"})
 public class UserServiceTest {
 
-//	@Resource
-//	private UserService userService;
-//	@Test
-//	public void testSaveUser() {
+	@Resource
+	private UserService userService;
+	@Test
+	public void testSaveUser() {
 //		User user = new User("wrs", "123455", "1353842");
 //		userService.registerUser("wenrisheng", "333333333");
-//	}
+	}
 	
 //	@Test
 //	public void testDeleteUser() {
